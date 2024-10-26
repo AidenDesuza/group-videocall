@@ -84,7 +84,7 @@ const Room = () => {
 
   useEffect(() => {
     const unsub = () => {
-      socket.current = io.connect("http://localhost:8000/");
+      socket.current = io.connect("https://group-videocall.onrender.com/");
       socket.current.on("message", (data) => {
         const audio = new Audio(msgSFX);
         if (user?.uid !== data.user.id) {
